@@ -1,0 +1,182 @@
+---
+title: "Applying Cluster Analysis in R for Business Segmentation"
+subtitle: "Data Analysis for Decision-Making (SS 2026) | Prof. Dr. Stephan Huber"
+author: 
+  - name: "Saketh Srigiri | Matriculation Number: 401147366" 
+    email: "srigiri.saketh@stud.hs-fresenius.com"
+    affiliations: "Hochschule Fresenius University of Applied Sciences"
+date: "16 June 2026"
+date-format: long
+format:
+  pdf: default
+editor: visual
+---
+
+# Introduction
+
+**Imagine this scenario...** A retail company has 10,000 customers.
+
+Every customer has different:
+
+-   Income levels
+-   Spending habits
+-   Buying preferences
+
+Should the company send the same promotion to everyone?
+
+**No.**
+
+Businesses need to identify groups of similar customers so they can create targeted marketing strategies.
+
+# What is Cluster Analysis?
+
+Cluster Analysis is an unsupervised machine learning technique that groups similar observations together based i their characteristics.
+
+Its objective is to: -
+
+-   Maximize similarity within each group
+
+-   Minimize similarity between different groups
+
+Unlike classification, there are no predefined labels.
+
+# Why is Business Segmentation Important?
+
+Business segmentation helps organizations:
+
+-   Understand customer behavior
+
+-   Personalize marketing campaigns
+
+-   Improve customer satisfaction
+
+-   Increase sales
+
+Instead of treating every customer equally, businesses can focus on the needs of each segment.
+
+# Applications of Cluster Analysis
+
+Cluster analysis is widely used in:
+
+-   Customer segmentation
+
+-   Product recommendation systems
+
+-   Fraud detection
+
+-   Credit risk analysis
+
+-   Market research
+
+-   Healthcare analytics
+
+-   Social media analysis
+
+# Workflow of Cluster Analysis
+
+The complete process follows these steps:
+
+1.  Collect data
+2.  Prepare and clean data
+3.  Scale variables
+4.  Choose the optimal number of clusters
+5.  Apply K-Means algorithm
+6.  Interpret business insights
+
+# Data Preparation
+
+Before clustering:
+
+-   Remove missing values
+
+-   Select relevant variables
+
+-   Standardize the data
+
+Scaling is the important because variables may have different ranges.
+
+For example:
+
+Income = 20-150
+
+Spending score = 1-100
+
+Without scaling, income would dominate the clustering process.
+
+# Choosing the Number of Clusters
+
+One of the biggest question is:
+
+**How many clusters should we create?**
+
+-   The most common approach is the Elbow Method.
+
+-   It calculates the Within-cluster Sum of Squares (WSS) for different values of K.
+
+-   The point where improvement starts slowing down is called Elbow.
+
+-   That value is selected as the optimal number of clusters.
+
+# How K-Means Works
+
+The K-Means algorithm follows four simple steps:
+
+1.  Select K initial centroids
+2.  Assign each data point to its nearest centroid
+3.  Recalculate centroid positions
+4.  Repeat until the assignments stop changing
+
+The final result is a set of well-defined customer groups.
+
+# Interpreting Customers Segments
+
+Example segmentation:
+
+**Cluster 1** High Income + High Spending -\> Premium Customers
+
+**Cluster 2** High Income + Low Spending -\> Up-selling Opportunities
+
+**Cluster 3** Low Income + High Spending -\> Promotion-Sensitive Customers
+
+**Cluster 4** Low Income + Low Spending -\> Budget Customers
+
+Each group requires a different marketing strategy.
+
+# Business Benefits
+
+Using cluster analysis helps businesses:
+
+-   Target the right customers
+-   Improve marketing effectiveness
+-   Increase customers retention
+-   Allocate resources efficiently
+-   Discover hidden patterns in customer behavior
+
+Ultimately, it leads to better business decisions.
+
+# Advantages
+
+-   Easy to understand
+-   Simple to implement
+-   Scaleable to large data-sets
+-   Produces meaningful customers segments
+-   Supports personalized marketing
+
+# Limitations
+
+-   Selecting the correct number of clusters can be difficult
+-   Sensitive to outliers
+-   Requires proper data scaling
+-   Different initial centroids may produce different results.
+
+Therefore, validation is always important.
+
+# Conclusion
+
+Cluster analysis transforms raw customer data into valuable business insights.
+
+By identifying customer segments, organizations can make smarter decisions, optimize marketing campaigns, and improve campaigns, and improve customer relationships.
+
+# Thank you
+
+**Questions?**
