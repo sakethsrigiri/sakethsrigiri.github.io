@@ -1,15 +1,17 @@
 ---
 title: "Applying Cluster Analysis in R for Business Segmentation"
-subtitle: Data Analysis for Decision-Making (SS 2026)
 author:
    - name: "Saketh Srigiri"
      email: srigiri.saketh@stud.hs-fresenius.de
      affiliation: "Hochschule Fresenius University of Applied Sciences"
-date: "16 June 2026"
+course: "Data Analysis for Decision-Making (SS 2026)"
+professor: "Prof. Dr. Stephan Huber"
+duedate: "16 June 2026"
 date-format: long
 format:
-  html: default
-  pdf: default
+  apaquarto-html: default
+  apaquarto-pdf: 
+    documentmode: stu
 execute: 
   echo: true
   warning: false
@@ -18,6 +20,7 @@ editor: visual
 bibliography: references.bib
 csl: apa.csl
 ---
+
 
 # 1. Introduction
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Saketh Srigiri">
-<meta name="dcterms.date" content="2026-06-16">
+<meta name="description" content="APPLYING CLUSTER ANALYSIS IN R FOR BUSINESS SEGMENTATION">
 
 <title>Applying Cluster Analysis in R for Business Segmentation</title>
 <style>
@@ -86,62 +86,76 @@ div.csl-indent {
 <script src="handout_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="handout_files/libs/quarto-html/popper.min.js"></script>
 <script src="handout_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="handout_files/libs/quarto-html/anchor.min.js"></script>
 <link href="handout_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="handout_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="handout_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="handout_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="handout_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="handout_files/libs/bootstrap/bootstrap-15f85eb00547d308b9628b46447080fb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
+<link rel="stylesheet" href="_extensions/wjschne/apaquarto/apa.css">
 </head>
 
 <body class="quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#firstheader" id="toc-firstheader" class="nav-link active" data-scroll-target="#firstheader">Applying Cluster Analysis in R for Business Segmentation</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#business-applications-of-customer-segmentation" id="toc-business-applications-of-customer-segmentation" class="nav-link" data-scroll-target="#business-applications-of-customer-segmentation">2. Business Applications of Customer Segmentation</a></li>
+  <li><a href="#k-means-clustering-algorithm" id="toc-k-means-clustering-algorithm" class="nav-link" data-scroll-target="#k-means-clustering-algorithm">3. K-means Clustering Algorithm</a></li>
+  <li><a href="#implementing-cluster-analysis-in-r" id="toc-implementing-cluster-analysis-in-r" class="nav-link" data-scroll-target="#implementing-cluster-analysis-in-r">4. Implementing Cluster Analysis in R</a></li>
+  <li><a href="#advantages-and-limitations" id="toc-advantages-and-limitations" class="nav-link" data-scroll-target="#advantages-and-limitations"><strong>5. Advantages and Limitations</strong></a></li>
+  <li><a href="#evaluating-cluster-quality" id="toc-evaluating-cluster-quality" class="nav-link" data-scroll-target="#evaluating-cluster-quality">6. Evaluating Cluster Quality</a>
+  <ul class="collapse">
+  <li><a href="#elbow-method" id="toc-elbow-method" class="nav-link" data-scroll-target="#elbow-method"><strong>6.1 Elbow Method</strong></a></li>
+  <li><a href="#silhouette-analysis" id="toc-silhouette-analysis" class="nav-link" data-scroll-target="#silhouette-analysis"><strong>6.2 Silhouette Analysis</strong></a></li>
+  <li><a href="#business-interpretation-of-clusters" id="toc-business-interpretation-of-clusters" class="nav-link" data-scroll-target="#business-interpretation-of-clusters"><strong>6.3 Business Interpretation of Clusters</strong></a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">7. Conclusion</a></li>
+  <li><a href="#affidavit" id="toc-affidavit" class="nav-link" data-scroll-target="#affidavit">Affidavit</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="handout.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Applying Cluster Analysis in R for Business Segmentation</h1>
-<p class="subtitle lead">Data Analysis for Decision-Making (SS 2026)</p>
+<!-- This file is intentionally empty. The APA title page for HTML output
+     is generated by frontmatter.lua. Do not add content here — it would
+     override the Lua-generated title block. -->
+
+
+<br>
+
+<br>
+
+<section id="title" class="level1 title unnumbered unlisted">
+<h1 class="title unnumbered unlisted">Applying Cluster Analysis in R for Business Segmentation</h1>
+<div class="Author">
+<br>
+
+<p>Saketh Srigiri</p>
+<p>Hochschule Fresenius University of Applied Sciences</p>
 </div>
+<br>
 
+<br>
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Saketh Srigiri <a href="mailto:srigiri.saketh@stud.hs-fresenius.de" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Hochschule Fresenius University of Applied Sciences
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta">
-
-      
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 16, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+</section>
+<section id="author-note" class="level1 unnumbered unlisted AuthorNote">
+<h1 class="unnumbered unlisted AuthorNote">Author Note</h1>
+<p></p>
+<br>
+</section>
+<section id="firstheader" class="level1 title unnumbered">
+<h1 class="title unnumbered">Applying Cluster Analysis in R for Business Segmentation</h1>
+</section>
 <section id="introduction" class="level1">
 <h1>1. Introduction</h1>
 <p>Organizations generate large volumes of customer data through transactions, online interactions, loyalty programs, and social media. However, this data becomes valuable only when meaningful patterns are identified. Cluster analysis, an unsupervised machine learning technique, groups similar observations to uncover natural customer segments and support data-driven decision-making <span class="citation" data-cites="Gan2007 Hastie2009">(<a href="#ref-Gan2007" role="doc-biblioref">Gan et al., 2007</a>; <a href="#ref-Hastie2009" role="doc-biblioref">Hastie et al., 2009</a>)</span>.</p>
@@ -242,7 +256,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="handout_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="384"></p>
+<p><img src="handout_files/figure-html/unnamed-chunk-5-1.svg" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
@@ -257,7 +271,7 @@ div.csl-indent {
 <h1>6. Evaluating Cluster Quality</h1>
 <p>One of the most crucial stages in cluster analysis is figuring out the ideal number of clusters. While choosing too many clusters could lead to needless complexity and decreased interpretability, choosing too few clusters could merge different client groups. Cluster quality is assessed using a number of statistical methods.</p>
 <section id="elbow-method" class="level3">
-<h3 class="anchored" data-anchor-id="elbow-method"><strong>6.1 Elbow Method</strong></h3>
+<h3 data-anchor-id="elbow-method"><strong>6.1 Elbow Method</strong></h3>
 <p>The Elbow Method plots WCSS against K values — the optimal K appears where the curve bends <span class="citation" data-cites="Hastie2009">(<a href="#ref-Hastie2009" role="doc-biblioref">Hastie et al., 2009</a>)</span>. If the elbow appears at K = 3, then three clusters may provide the best balance between simplicity and explanatory power.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
@@ -270,14 +284,14 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="handout_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="192"></p>
+<p><img src="handout_files/figure-html/unnamed-chunk-6-1.svg" class="img-fluid figure-img" width="192"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 <section id="silhouette-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="silhouette-analysis"><strong>6.2 Silhouette Analysis</strong></h3>
+<h3 data-anchor-id="silhouette-analysis"><strong>6.2 Silhouette Analysis</strong></h3>
 <p>Silhouette scores range from -1 to 1, where values close to 1 indicate well-defined clusters <span class="citation" data-cites="Rousseeuw1987">(<a href="#ref-Rousseeuw1987" role="doc-biblioref">Rousseeuw, 1987</a>)</span>. This method often provides a more reliable estimate of the optimal number of clusters than relying solely on visual inspection.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_nbclust</span>(</span>
@@ -288,14 +302,14 @@ div.csl-indent {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="handout_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="192"></p>
+<p><img src="handout_files/figure-html/unnamed-chunk-7-1.svg" class="img-fluid figure-img" width="192"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 <section id="business-interpretation-of-clusters" class="level3">
-<h3 class="anchored" data-anchor-id="business-interpretation-of-clusters"><strong>6.3 Business Interpretation of Clusters</strong></h3>
+<h3 data-anchor-id="business-interpretation-of-clusters"><strong>6.3 Business Interpretation of Clusters</strong></h3>
 <p>The true value of clustering lies not only in identifying groups but also in translating those groups into actionable business strategies. Managers can use these insights to allocate marketing budgets more effectively and improve customer retention.</p>
 <table class="caption-top table">
 <colgroup>
@@ -361,12 +375,9 @@ div.csl-indent {
 <p>Saketh Srigiri, 16 June 2026, Cologne</p>
 </div>
 </section>
-<section id="references" class="level1 unnumbered">
-
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<section id="references" class="level1">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-Gan2007" class="csl-entry" role="listitem">
 Gan, G., Ma, C., &amp; Wu, J. (2007). <em>Data clustering: Theory, algorithms, and applications.</em> SIAM. <a href="https://doi.org/10.1137/1.9780898718348">https://doi.org/10.1137/1.9780898718348</a>
 </div>
@@ -379,17 +390,13 @@ Rousseeuw, P. J. (1987). <span class="nocase">Silhouettes: A Graphical Aid to th
 <div id="ref-Wickham2023" class="csl-entry" role="listitem">
 Wickham, H., Çetinkaya-Rundel, M., &amp; Grolemund, G. (2023). <em><span class="nocase">R for Data Science</span></em> (Second). O’Reilly Media. <a href="https://r4ds.hadley.nz">https://r4ds.hadley.nz</a>
 </div>
-</div></section></div></main>
+</div>
+</section>
+
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
